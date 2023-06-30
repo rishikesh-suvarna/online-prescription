@@ -22,12 +22,12 @@ You’ll need to install NodeJS & MongoDB  in order to run this project
 
 Once done, Project can be opened on “http://localhost:3000”.
 
-•	Folder Structure
-    o	Public: Stores all static files ex: CSS, Javascript
-    o	Views: Stores all the view templated ex: HTML, EJS files
-    o	Models: Stores the database schema
-    o	Routes: Stores all RouterJS files
-    o	Middleware: Stores custom middlewares for routes
+Folder Structure
+* Public: Stores all static files ex: CSS, Javascript
+* Views: Stores all the view templated ex: HTML, EJS files
+* Models: Stores the database schema
+* Routes: Stores all RouterJS files
+* Middleware: Stores custom middlewares for routes
 
 
 >Using PassportJS library for Authentication.
