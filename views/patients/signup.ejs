@@ -1,0 +1,49 @@
+<%- include ("../partials/header") %> 
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-6" style="float: none; margin: auto;">
+        <form class="form-container" action="/patients/signup" method="POST" enctype="multipart/form-data">
+            <h1 class="mb-3" style="text-align: center;">Paitent's Sign Up!</h1>
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="profilePicture" id="profilePicture" aria-describedby="inputGroupFileAddon01" accept=".jpg,.jpeg,.png" required>
+                  <label class="custom-file-label" for="inputGroupFile01">Profile Picture</label>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="email" class="form-control" placeholder="Email"  required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="number" name="age" class="form-control" placeholder="Age"  required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="tel" name="phoneNumber" class="form-control" placeholder="Phone-number" maxlength="10" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="historySurgery" class="form-control" placeholder="History of Surgery (Seperated by commas)"  required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="historyIllness" class="form-control" placeholder="History of Illness (Seperated by commas)"  required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" name="password" class="form-control" id="changep"  placeholder="Password" minlength="6" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="eyep"><i class="far fa-eye" id="iconp" ></i></span>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" name="cpassword" class="form-control" id="changecp" placeholder="Confirm Password" minlength="6" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="eyecp"><i class="far fa-eye" id="iconcp" ></i></span>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block">Sign Up &nbsp; <i class="fas fa-sign-in-alt"></i></button>
+            <a href="/"><i class="fas fa-angle-left mt-3"></i>&nbsp; Back</a>
+        </form>
+    </div>
+</div>
+
+<%- include ("../partials/footer") %> 

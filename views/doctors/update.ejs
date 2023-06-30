@@ -1,0 +1,36 @@
+<%- include ("../partials/header") %> 
+
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-6" style="float: none; margin: auto;">
+        <form class="form-container" action="/doctors/profile/<%= doctor._id %>/update?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h1 class="mb-3" style="text-align: center;"><%= doctor.name %>'s Profile</h1>
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="profilePicture" value="/uploads/<%= doctor.profilePicture %>" id="inputGroupFile01" accept=".jpg,.jpeg,.png" aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Profile Picture</label>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Name" value="<%= doctor.name %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="email" class="form-control" placeholder="Email" value="<%= doctor.email %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="speciality" class="form-control" placeholder="Speciality" value="<%= doctor.speciality %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="tel" name="phoneNumber" class="form-control" placeholder="Phone-number" value="<%= doctor.phoneNumber %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="number" name="experience" class="form-control" placeholder="Experience" step="0.1" value="<%= doctor.experience %>" required>
+            </div>
+            <button class="btn btn-primary btn-block">Update</button>
+        </form>
+        <a href="/doctors/profile/<%= doctor._id %>"><i class="fas fa-angle-left mt-3"></i>&nbsp; Back</a>
+    </div>
+</div>
+
+
+<%- include ("../partials/footer") %> 

@@ -1,0 +1,75 @@
+<%- include ("../partials/header") %>
+
+<form id="msform" action="/patients/<%= pid %>/consult/<%= did %>" method="POST">
+    <!-- progressbar -->
+    <ul id="progressbar">
+      <li class="active">Current Illness</li>
+      <li>Family Medical</li>
+      <li>Payment & Submit</li>
+    </ul>
+    <!-- fieldsets -->
+    <fieldset>
+        <h2 class="fs-title mb-3">Current Illness History</h2>
+        <div class="input-group mb-3">
+            <input type="text" name="illnessHistory" class="form-control" placeholder="Illness History">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" name="recentSurgery" class="form-control" placeholder="Recent Surgery (Time Span)">
+        </div>
+        <a href="#" class="next action-button btn btn-primary">Next &nbsp;<i class="fas fa-angle-right"></i></a>
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title mb-3">Family Medical History</h2>
+        <div class="custom-control custom-radio custom-control-inline mb-3">
+            <input type="radio" id="customRadioInline1" name="diabetic" value="diabetic" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline1">Diabetics</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline mb-3">
+            <input type="radio" id="customRadioInline2" name="diabetic" value="non-diabetic" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline2">Non-Diabetics</label>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" name="allergies" class="form-control" placeholder="Any Allergies">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" name="others" class="form-control" placeholder="Others">
+          </div>
+        <a href="#" class="previous action-button btn btn-warning"><i class="fas fa-angle-left"></i>&nbsp; Prev</a>
+        <a href="#" class="next action-button btn btn-primary">Next &nbsp;<i class="fas fa-angle-right"></i></a>
+  </fieldset>
+  <fieldset class="payment">
+    <h2 class="fs-title mb-3">Payment</h2>
+    <div class="row">
+        <div class="col-6 mb-3">
+            <img src="/images/QR.png" style="width: auto; height: 150px; margin-top: 30px;" alt="">
+        </div>
+        <div class="col-6 mb-3" style="border: 1px dotted black;">
+            <h4>Pay using any UPI App</h4>
+            <h3><strong>600/-</strong></h3>
+            <p>(After Payment)</p>
+            <div class="input-group mb-3">
+                <input type="text" name="transactionID" class="form-control" placeholder="Enter Transaction ID*">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="text-justify">
+        <p>I HAVE UNDERSTOOD THAT THIS IS AN ONLINE CONSULTATION WITHOUT A PHYSICAL CHECKUP OF MY SYMPTOMS. THE DOCTOR HENCE RELIES ON MY DESCRIPTION OF THE PROBLEM OR SCANNED REPORTS
+          PROVIDED BY ME. WITH THIS UNDERSTANDING, I HEREBY GIVE MY CONSENT FOR ONLINE CONSULTATION 
+        </p>
+        <div class="custom-control custom-checkbox mb-3">
+            <input type="checkbox" class="custom-control-input" name="accept" value="accepted" id="customCheck" required>
+            <label class="custom-control-label" for="customCheck">Yes, I Accept</label>
+        </div>
+    </div>
+    <a href="#" class="previous action-button btn btn-warning"><i class="fas fa-angle-left"></i>&nbsp; Prev</a>
+    <button class="submit action-button btn btn-success" value="Submit">Submit</Button>
+  </fieldset>
+  <div class="mt-3 ml-5 text-left">
+    <a href="/patients/index"><i class="fas fa-angle-left"></i>&nbsp; Back</a></Back>
+  </div>
+</form>
+
+
+
+<%- include ("../partials/footer") %>

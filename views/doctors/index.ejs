@@ -1,0 +1,43 @@
+<%- include ("../partials/header") %> 
+
+<div class="row text-center">
+    <div class="col-md-4">
+        <div class="card form-container">
+            <div class="card-body">
+            <h5 class="card-title">View Profile</h5>
+            <p class="card-text">View & Update Your Profile</p>
+            &nbsp;
+            <a href="/doctors/profile/<%= currentUser._id %>" class="btn btn-primary btn-block">View &nbsp;&nbsp;<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card form-container">
+            <div class="card-body">
+            <h5 class="card-title">View Consultation Requests</h5>
+            <p class="card-text">View & Consult Requests</p>
+            <a href="/doctors/consultations"class="btn btn-primary btn-block">View &nbsp;&nbsp;<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card form-container">
+            <div class="card-body">
+            <h5 class="card-title">View Submitted Consultations</h5>
+            <p class="card-text">View Previous Consultations</p>
+            <a href="/doctors/completedconsultations" class="btn btn-primary btn-block">View &nbsp;&nbsp;<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <a href="/logout" class="btn btn-danger btn-lg">Logout</a>
+
+<a href="/doctors/profile/<%= currentUser._id %>" class="btn btn-primary btn-lg">Profile</a>
+
+<a href="/doctors/consultations" class="btn btn-success btn-lg">View Consultation Request</a>
+
+<a href="/doctors/completedconsultations" class="btn btn-secondary btn-lg">View Submitted Consultations</a> -->
+
+
+<%- include ("../partials/footer") %> 

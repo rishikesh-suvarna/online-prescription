@@ -1,0 +1,37 @@
+<%- include ("../partials/header") %> 
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-6" style="float: none; margin: auto;">
+        <form class="form-container" action="/patients/profile/<%= patient._id %>/update?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h1 class="mb-3" style="text-align: center;"><%= patient.name %>'s Profile</h1>
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="profilePicture" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" accept=".jpg,.jpeg,.png">
+                  <label class="custom-file-label" for="inputGroupFile01">Profile Picture</label>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Name" value="<%= patient.name %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="email" class="form-control" placeholder="Email" value="<%= patient.email %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="number" name="age" class="form-control" placeholder="Age" value="<%= patient.age %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="tel" name="phoneNumber" class="form-control" placeholder="Phone-number" value="<%= patient.phoneNumber %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="historySurgery" class="form-control" placeholder="History of Surgery" value="<%= patient.historySurgery %>" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="historyIllness" class="form-control" placeholder="History of Illness" value="<%= patient.historyIllness %>" required>
+            </div>
+            <button class="btn btn-primary btn-block">Update Profile</button>
+        </form>
+        <a href="/patients/profile/<%= patient._id %>"><i class="fas fa-angle-left mt-3"></i>&nbsp; Back</a>
+    </div>
+</div>
+
+<%- include ("../partials/footer") %> 

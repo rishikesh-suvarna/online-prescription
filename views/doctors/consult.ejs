@@ -1,0 +1,44 @@
+<%- include ("../partials/header") %> 
+
+<div class="consult-container">
+    <h2 class="text-center">Patient Details</h2>
+    <hr>
+    <p><strong>Patient Name:</strong> <%= patient.name %></p>
+    <p><strong>Patient Email:</strong> <%= patient.email %></p>
+    <p><strong>Patient Age:</strong> <%= patient.age %></p>
+    <p><strong>Patient Phone-Number:</strong> <%= patient.phoneNumber %></p>
+    <p><strong>Patient History Of Illness:</strong> <%= patient.historyIllness %></p>
+    <p><strong>Patient History Of Surgery:</strong> <%= patient.historySurgery %></p>
+</div>
+<hr>
+<div class="consult-container">
+    <h2 class="text-center">Diagnosis Details</h2>
+    <hr>
+    <p><strong>Illness:</strong> <%= consultation.illnessHistory %></p>
+    <p><strong>Recent Surgery:</strong> <%= consultation.recentSurgery %></p>
+    <p><strong>Diabetic:</strong> <%= consultation.diabetic %></p>
+    <p><strong>Allergies:</strong> <%= consultation.allergies %></p>
+    <p><strong>Others:</strong> <%= consultation.others %></p>
+</div>
+<hr>
+<div class="consult-container">
+    <h2 class="text-center">Consult Patient</h2>
+    <hr>
+    <form action="/doctors/consultations/<%= consultation._id %>/consult" method="POST" class="text-center">
+        <div class="form-group">
+            <label for="Textarea1">Care to be taken</label>
+            <textarea class="form-control" id="Textarea1" name="careToBeTaken" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Textarea2">Medicine</label>
+            <textarea class="form-control" id="Textarea2" name="medicines" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </form>
+</div>
+<div class="mt-5">
+    <a href="/doctors/consultations"><i class="fas fa-angle-left"></i>&nbsp; Back</a>
+</div>
+
+
+<%- include ("../partials/footer") %> 

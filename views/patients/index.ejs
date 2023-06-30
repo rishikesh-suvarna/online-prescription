@@ -1,0 +1,51 @@
+<%- include ("../partials/header") %> 
+
+
+
+<div class="row text-center" style="margin-top: -60px;">
+    <div class="col-md-6">
+        <div class="card form-container">
+            <div class="card-body">
+            <h5 class="card-title">View Profile</h5>
+            <p class="card-text">View & Update Your Profile</p>
+            &nbsp;
+            <a href="/patients/profile/<%= currentUser._id %>" class="btn btn-primary btn-block">View &nbsp;&nbsp;<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card form-container">
+            <div class="card-body">
+            <h5 class="card-title">View Consultations</h5>
+            <p class="card-text">View Your Consultations</p>
+            &nbsp;
+            <a href="/patients/consultations" class="btn btn-primary btn-block">View &nbsp;&nbsp;<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h1 class="mb-5 mt-5 text-center"><i class="fas fa-star-of-life"></i>&nbsp; Available Doctors &nbsp;<i class="fas fa-star-of-life"></i></h1>
+
+
+<div class="row animated fadeIn fast">
+    <% doctors.forEach(function(doctor){ %>
+        <div class="col-md-4">
+            <div class="card border-dark mb-3" style="border-radius: 10px; box-shadow: 0px 0px 10px 0px #000;">
+                <img class="card-img-top thumbnail p-1" src="/uploads/doctors/<%= doctor.profilePicture %>" alt="Card image cap">
+                <div class="card-header text-center">Dr. <%= doctor.name %></div>
+                <div class="card-body">
+                    <p class="card-text">Email: <%= doctor.email %></p>
+                    <p class="card-text">Speciality: <%= doctor.speciality %></p>
+                    <a href="/patients/<%= currentUser._id %>/consult/<%= doctor._id %>" class="btn btn-success btn-block">Consult</a>
+                </div>
+            </div>
+        </div>
+    <% }); %> 
+</div>
+<!-- <a href="/patients/profile/<%= currentUser._id %>" class="btn btn-primary btn-lg">Profile</a>
+<a href="/patients/consultations" class="btn btn-warning btn-lg">Consultations</a> -->
+    
+
+<%- include ("../partials/footer") %> 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Online Prescription</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+    </head>
+    <body>
+        <!-- NavBar -->
+      <nav id="mainnavbar" class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <a class="navbar-brand" href="/"><i class="fas fa-user-md"></i>&nbsp; Online Prescription</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <!--  -->
+             <% if(!currentUser){ %>
+              <li class="nav-item active">
+                <a class="nav-link" href="/"><i class="fas fa-home"></i>&nbsp; Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            <% } else { %>
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+               <% if(currentUser.designation === 'doctor'){ %>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"> Signed in as: Dr. <%= currentUser.name.substr(0, currentUser.name.indexOf(' ')) %></a>
+                </li>
+              <% } else { %>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"> Signed in as: <%= currentUser.name.substr(0, currentUser.name.indexOf(' ')) %></a>
+                </li>
+               <% } %>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            <% } %>
+        </ul>
+        </div>
+      </nav>
+          <div class="container animated fadeIn fast">
+            <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger animated fadeIn fast" role="alert">
+                  <%= error %>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert alert-success animated fadeIn fast" role="alert">
+                    <%= success %>
+                </div>
+            <% } %>
